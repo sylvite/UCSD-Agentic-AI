@@ -4,13 +4,13 @@
 **Clinical Trial Finder** is an automated multi-agent pipeline built for researchers and clinicians. Driven by an LLM classification-based router that validates input URLs, the tool filters target Wikipedia disease pages, extracts hallmark mutated genes via web scraping, queries real-time clinical trial registries through a custom API tool, and compiles everything into a clinician-ready briefing. It executes across multiple sequential runs to leverage built-in memory tracking.
 
 ## Architecture Diagram
+
 [ Input: List of Test URLs / Strings (TEST_URLS) ]
 
                                 │
                                 
                                 ▼
          [ Control Layer: LLM Classifier Router (`url_classifier`) ]
-         
          │ (Filters out non-disease / non-Wikipedia links)
          
                                 │
@@ -34,6 +34,7 @@
    • Uses prebuilt: ScrapeWebsiteTool            • Uses custom @tool: search_clinical_trials
    • Target: Filtered Wikipedia disease page     • Target: ClinicalTrials.gov REST API
    • Extracts: Hallmark mutated gene             • Finds: Active/recruiting trials
+   
    └────────────────────────────┬────────────────────────────┘
    
                                 │
