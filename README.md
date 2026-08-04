@@ -22,6 +22,7 @@
                     [ CrewAI Execution Crew ]
    ┌────────────────────────────┴────────────────────────────┐
    │                                                         │
+   
    ▼                                                         ▼
 [ Agent 1: Gene Researcher ]                      [ Agent 2: Clinical Trial Matcher ]
    • Uses prebuilt: ScrapeWebsiteTool            • Uses custom @tool: search_clinical_trials
@@ -29,15 +30,18 @@
    • Extracts: Hallmark mutated gene             • Finds: Active/recruiting trials
    └────────────────────────────┬────────────────────────────┘
                                 │
+                                
                                 ▼
                   [ Agent 3: Medical Writer ]
    • Synthesizes findings and context handoffs
    • Compiles structured clinical summary
                                 │
+                                
                                 ▼
         [ Memory: Crew memory (google-generativeai embedder) ]
    (Tested across dual consecutive runs to leverage cross-run context)
                                 │
+                                
                                 ▼
                [ Artifacts: clinician_report1.md & clinician_report2.md ]
 
