@@ -5,22 +5,28 @@
 
 ## Architecture Diagram
 [ Input: List of Test URLs / Strings (TEST_URLS) ]
+
                                 │
                                 
                                 ▼
          [ Control Layer: LLM Classifier Router (`url_classifier`) ]
+         
          │ (Filters out non-disease / non-Wikipedia links)
+         
                                 │
                       (If "VALID" URL matched)
+                      
                                 │
                                 
                                 ▼
            [ CrewPlanner & Plan Generation Handler ]
+           
                                 │
                                 
                                 ▼
                     [ CrewAI Execution Crew ]
    ┌────────────────────────────┴────────────────────────────┐
+   
    │                                                         │
    
    ▼                                                         ▼
@@ -29,17 +35,20 @@
    • Target: Filtered Wikipedia disease page     • Target: ClinicalTrials.gov REST API
    • Extracts: Hallmark mutated gene             • Finds: Active/recruiting trials
    └────────────────────────────┬────────────────────────────┘
+   
                                 │
                                 
                                 ▼
                   [ Agent 3: Medical Writer ]
    • Synthesizes findings and context handoffs
    • Compiles structured clinical summary
+   
                                 │
                                 
                                 ▼
         [ Memory: Crew memory (google-generativeai embedder) ]
    (Tested across dual consecutive runs to leverage cross-run context)
+   
                                 │
                                 
                                 ▼
