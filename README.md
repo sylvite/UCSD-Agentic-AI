@@ -6,36 +6,52 @@
 ## Architecture Diagram
 
 [ Input: Filtered Wikipedia disease page URL ]
+
                        │
+                       
                        ▼
       [ Control Layer: LLM Classifier Router ]
+      
                        │
+                       
                        ▼
     [ CrewPlanner & Plan Generation Handler ]
+    
                        │
+                       
                        ▼
            [ CrewAI Execution Crew ]
+           
                        │
+                       
                        ▼
           [ Agent 1: Gene Researcher ]
    • Uses prebuilt: ScrapeWebsiteTool
    • Target: Wikipedia disease page
    • Extracts: Hallmark mutated gene
+   
                        │
+                       
                        ▼ (Context Hand-off)
           [ Agent 2: Clinical Trial Matcher ]
    • Uses custom @tool: search_clinical_trials
    • Target: ClinicalTrials.gov REST API
    • Finds: Active/recruiting trials
+   
                        │
+                       
                        ▼ (Context Hand-off)
            [ Agent 3: Medical Writer ]
    • Synthesizes findings and outputs briefing
+   
                        │
+                       
                        ▼
  [ Memory: google-generativeai embedder (gemini-embedding-001) ]
    (Tracked across dual consecutive test runs)
+   
                        │
+                       
                        ▼
   [ Artifacts: clinician_report1.md & clinician_report2.md ]
   
