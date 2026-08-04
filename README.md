@@ -1,7 +1,7 @@
 # Clinical Trial Finder: Disease/Gene Mutation-to-Therapy Matchmaker
 
 ## What the Tool Does and Who It Is For
-**Clinical Trial Finder** is an automated multi-agent pipeline built for researchers and clinicians. Driven by an LLM classification-based router that validates input URLs, the tool filters target Wikipedia disease pages, extracts hallmark mutated genes via web scraping, queries real-time clinical trial registries through a custom API tool, and compiles everything into a clinician-ready briefing. It executes across multiple sequential runs to leverage built-in memory tracking.
+**Clinical Trial Finder** is a multi-agent pipeline built for researchers and clinicians. An LLM classification-based router validates input URLs, then the tool filters target Wikipedia disease pages, extracts hallmark mutated genes via web scraping, queries real-time clinical trial registries through a custom API tool, and compiles everything into a clinician-ready briefing. It executes across multiple sequential runs to leverage built-in memory tracking.
 
 ## Architecture Diagram
 
@@ -69,4 +69,4 @@
 | 7 | Saved Artifact | Final Execution Cell | Automatically exports compiled outputs into persistent `clinician_report1.md` and `clinician_report2.md` files across test iterations[cite: 1]. |
 
 ## AI-Use Notes
-- **Assistance:** Gemini was used to draft the boilerplate code for the custom API tool to call clinicaltrials.gov. It also created the architecture diagram above and to create the structure and format, and assisted with the content of this README file.
+- **Assistance:** Gemini was used to draft the boilerplate code for the custom API tool to call clinicaltrials.gov. It also created the architecture diagram above and the structure and format of this README.md file, and assisted with the textual content.
