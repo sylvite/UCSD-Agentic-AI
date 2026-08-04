@@ -1,7 +1,7 @@
-# Orphan Finder: Rare-Disease Variant-to-Therapy Matchmaker
+# Clinical Trial Finder: Disease/Gene Mutation-to-Therapy Matchmaker
 
 ## What the Tool Does and Who It Is For
-**Orphan Finder** is an automated multi-agent pipeline built for researchers and clinicians. Driven by an LLM classification-based router that validates input URLs, the tool filters target Wikipedia disease pages, extracts hallmark mutated genes via web scraping, queries real-time clinical trial registries through a custom API tool, and compiles everything into a clinician-ready briefing. It executes across multiple sequential runs to leverage built-in memory tracking.
+**Clinical Trial Finder** is an automated multi-agent pipeline built for researchers and clinicians. Driven by an LLM classification-based router that validates input URLs, the tool filters target Wikipedia disease pages, extracts hallmark mutated genes via web scraping, queries real-time clinical trial registries through a custom API tool, and compiles everything into a clinician-ready briefing. It executes across multiple sequential runs to leverage built-in memory tracking.
 
 ## Architecture Diagram
 [ Input: List of Test URLs / Strings (TEST_URLS) ]
@@ -53,4 +53,4 @@
 
 ## AI-Use Notes
 - **Core Models:** Powered by Google Gemini (`gemini-3.5-flash` / `gemini-3.1-flash-lite`) for agent execution/routing and `gemini-embedding-001` for cross-run memory embeddings.
-- **Assistance:** Generative AI was used to draft structural syntax patterns for the custom API tool, refine prompt boundaries, and construct the execution control wrapper.
+- **Assistance:** Gemini was used to draft the boilerplate code for the custom API tool to call clinicaltrials.gov. It also created the architecture diagram above and to create the structure and format, but not the content (other than the architecture diagram), of this README file.
